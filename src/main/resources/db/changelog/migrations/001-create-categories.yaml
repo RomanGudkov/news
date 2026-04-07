@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-categories
+      author: roman
+
+      changes:
+        - createTable:
+            tableName: categories
+
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+
+              - column:
+                  name: name
+                  type: VARCHAR(255)

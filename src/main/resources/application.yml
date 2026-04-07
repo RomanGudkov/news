@@ -1,13 +1,22 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/practical
-    username: user
-    password: practical
-    driver-class-name: org.postgresql.Driver
+  application:
+    name: news-aggregator
+
+  profiles:
+    active: local
+
   jpa:
-    show-sql: true
-    hibernate.ddl-auto: none
+    hibernate:
+      ddl-auto: none
+
   liquibase:
-    change-log: classpath:db/changelog/changelog.sql
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
     enabled: true
-    drop-first: false
+
+
+logging:
+  level:
+    root: INFO
+    com.roman.gudkov: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE

@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-add-fk-article-category
+      author: roman
+
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: articles
+            baseColumnNames: category_id
+            referencedTableName: categories
+            referencedColumnNames: id
+            constraintName: fk_news_categories
+            onDelete: CASCADE

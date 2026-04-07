@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/migrations/001-create-categories.yaml
+
+  - include:
+      file: db/changelog/migrations/002-create-articles.yaml
+
+  - include:
+      file: db/changelog/migrations/003-add-fk-article-category.yaml
+
+  - include:
+      file: db/changelog/migrations/004-create-users-table.yaml
